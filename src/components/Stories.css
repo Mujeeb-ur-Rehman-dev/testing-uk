@@ -1,0 +1,87 @@
+.stories {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 70px 24px;
+  text-align: center;
+}
+
+.stories h2 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #0a6e4e;
+  margin-bottom: 14px;
+}
+
+.stories .subtext {
+  max-width: 560px;
+  margin: 0 auto 28px;
+  color: #555;
+  font-size: 15px;
+}
+
+.story-filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.filter-btn {
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: #0a6e4e;
+  color: #fff;
+  border-color: #0a6e4e;
+}
+
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+
+.story-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.story-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.story-card h3 {
+  font-size: 17px;
+  margin: 16px 16px 8px;
+}
+
+.story-card h3 a {
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.story-meta {
+  font-size: 13px;
+  color: #777;
+  margin: 0 16px 16px;
+}
+
+@media (max-width: 700px) {
+  .stories-grid {
+    grid-template-columns: 1fr;
+  }
+}
