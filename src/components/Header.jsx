@@ -17,7 +17,7 @@ export default function Header() {
     <header className="header">
       <div className="header__inner">
         <a href="/" className="header__logo">
-          <img src="/assets/logo.png" alt="MTJF" />
+          <img src="/assets/logo.png" alt="MTJF" width="34" height="34" />
           <span>MTJF</span>
         </a>
 

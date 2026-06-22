@@ -6,7 +6,7 @@ export default function Newsletter() {
     firstName: "",
     lastName: "",
     email: "",
-    optIn: true,
+    optIn: false,
   });
 
   const handleChange = (e) => {
@@ -16,71 +16,86 @@ export default function Newsletter() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: wire up to subscription endpoint
+    // TODO: wire up subscription endpoint
   };
 
   return (
-    <section className="newsletter">
-      <div className="newsletter__inner">
-        <div className="newsletter__intro">
-          <img src="/assets/icon-envelope.png" alt="" />
-          <h2>
-            ADD IMPACT
-            <br />
-            TO YOUR INBOX
+    <section className="nl">
+      <div className="nl__inner">
+
+        {/* ── LEFT: stamp icon + title ── */}
+        <div className="nl__left">
+          <img
+            className="nl__icon"
+            src="/assets/icon-envelope.png"
+            alt="Newsletter icon"
+            width="130"
+            height="130"
+          />
+          <h2 className="nl__title">
+            ADD IMPACT<br />TO YOUR INBOX
           </h2>
         </div>
 
-        <form className="newsletter__form" onSubmit={handleSubmit}>
-          <div className="newsletter__row">
-            <div className="newsletter__field">
-              <label>First Name</label>
+        {/* ── RIGHT: scalloped stamp form card ── */}
+        <div className="nl__card">
+          <form onSubmit={handleSubmit}>
+
+            <div className="nl__row">
+              <div className="nl__field">
+                <label className="nl__label">First Name</label>
+                <input
+                  className="nl__input"
+                  name="firstName"
+                  placeholder="First Name"
+                  value={form.firstName}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="nl__field">
+                <label className="nl__label">Last Name</label>
+                <input
+                  className="nl__input"
+                  name="lastName"
+                  placeholder="Last Name"
+                  value={form.lastName}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="nl__field">
+              <label className="nl__label">Email Address</label>
               <input
-                name="firstName"
-                placeholder="First Name"
-                value={form.firstName}
+                className="nl__input nl__input--full"
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                value={form.email}
                 onChange={handleChange}
                 required
               />
             </div>
-            <div className="newsletter__field">
-              <label>Last Name</label>
+
+            <label className="nl__checkbox">
               <input
-                name="lastName"
-                placeholder="Last Name"
-                value={form.lastName}
+                type="checkbox"
+                name="optIn"
+                checked={form.optIn}
                 onChange={handleChange}
-                required
               />
-            </div>
-          </div>
+              <span>Yes, keep me informed about MTJF programs and upcoming campaigns</span>
+            </label>
 
-          <div className="newsletter__field">
-            <label>Email Address</label>
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              value={form.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
+            <button className="nl__submit" type="submit">
+              Sign Up Now
+            </button>
 
-          <label className="newsletter__checkbox">
-            <input
-              type="checkbox"
-              name="optIn"
-              checked={form.optIn}
-              onChange={handleChange}
-            />
-            Yes, keep me informed about MTJF programs and upcoming campaigns
-          </label>
+          </form>
+        </div>
 
-          <button type="submit" className="newsletter__submit">
-            Sign Up Now
-          </button>
-        </form>
       </div>
     </section>
   );

@@ -2,9 +2,13 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   margin: 0;
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", "Segoe UI", Roboto, Arial, sans-serif;
   color: #1a1a1a;
   background: #fff;
 }
@@ -12,12 +16,25 @@ body {
 .page {
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 a {
-  cursor: pointer;
+  color: inherit;
 }
 
 img {
   max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
 }

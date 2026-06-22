@@ -17,7 +17,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer__top">
         <div className="footer__brand">
-          <img src="/assets/footer-logo.png" alt="MTJF" />
+          <img src="/assets/footer-logo.png" alt="MTJF" width="160" height="56" />
         </div>
 
         {COLUMNS.map((col) => (
