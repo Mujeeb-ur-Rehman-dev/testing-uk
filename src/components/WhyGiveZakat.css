@@ -1,0 +1,227 @@
+/* ═══════════════════════════════════════════════════════
+   WHY GIVE ZAKAT — Component Styles
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Section wrapper ── */
+.wzk {
+  position: relative;
+  background: #fffaee;
+  padding: 70px 60px;
+  overflow: hidden;
+}
+
+/* ── Decorative corner flowers (SVG) ── */
+.wzk__deco {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wzk__deco--tr {
+  top: 10px;
+  right: 16px;
+  width: 55px;
+  opacity: 0.9;
+}
+
+.wzk__deco--br {
+  bottom: 20px;
+  right: 80px;
+  width: 90px;
+  opacity: 0.85;
+}
+
+/* ── Two-column inner layout ── */
+.wzk__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ═══════════════════════════════════════════════════════
+   LEFT COLUMN — Text
+   ═══════════════════════════════════════════════════════ */
+
+.wzk__text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* "WHY GIVE ZAKAT?" */
+.wzk__title {
+  font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 900;
+  color: #0b212a;
+  text-transform: uppercase;
+  line-height: 1.15;
+  margin: 0 0 28px;
+  letter-spacing: 0.5px;
+}
+
+/* Body paragraphs */
+.wzk__body {
+  font-size: clamp(13.5px, 1.1vw, 15.5px);
+  color: #2a1a1a;
+  line-height: 1.65;
+  margin: 0 0 22px;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.wzk__body:last-of-type {
+  margin-bottom: 36px;
+}
+
+/* ── Donate Now button — scalloped stamp edges ── */
+.wzk__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #68101a;
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 40px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  align-self: flex-start;  /* don't stretch full width */
+
+  /* Scalloped sides: radial-gradient bites on left and right only */
+  -webkit-mask:
+    radial-gradient(circle at 0%   50%, transparent 10px, #000 11px) left   center / 11px 22px repeat-y,
+    radial-gradient(circle at 100% 50%, transparent 10px, #000 11px) right  center / 11px 22px repeat-y,
+    linear-gradient(#000 0 0) 11px 0 / calc(100% - 22px) 100% no-repeat;
+  mask:
+    radial-gradient(circle at 0%   50%, transparent 10px, #000 11px) left   center / 11px 22px repeat-y,
+    radial-gradient(circle at 100% 50%, transparent 10px, #000 11px) right  center / 11px 22px repeat-y,
+    linear-gradient(#000 0 0) 11px 0 / calc(100% - 22px) 100% no-repeat;
+}
+
+.wzk__btn:hover {
+  background: #500d14;
+}
+
+.wzk__btn-icon {
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   RIGHT COLUMN — Stamp photo
+   ═══════════════════════════════════════════════════════ */
+
+.wzk__stamp-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The postage-stamp frame:
+   - dark navy/teal background (#0b212a)
+   - scalloped edges on all 4 sides using CSS mask
+   - photo sits inside as a block image                  */
+.wzk__stamp {
+  background: #0b212a;
+  width: 100%;
+  max-width: 560px;
+  position: relative;
+
+  /* All-4-sides scalloped stamp mask */
+  -webkit-mask:
+    /* top */
+    radial-gradient(circle at 50% 0%,    transparent 12px, #000 13px) top    center / 28px 14px repeat-x,
+    /* bottom */
+    radial-gradient(circle at 50% 100%,  transparent 12px, #000 13px) bottom center / 28px 14px repeat-x,
+    /* left */
+    radial-gradient(circle at 0%   50%,  transparent 12px, #000 13px) left   center / 14px 28px repeat-y,
+    /* right */
+    radial-gradient(circle at 100% 50%,  transparent 12px, #000 13px) right  center / 14px 28px repeat-y,
+    /* solid center fill */
+    linear-gradient(#000 0 0) 14px 14px / calc(100% - 28px) calc(100% - 28px) no-repeat;
+  mask:
+    radial-gradient(circle at 50% 0%,    transparent 12px, #000 13px) top    center / 28px 14px repeat-x,
+    radial-gradient(circle at 50% 100%,  transparent 12px, #000 13px) bottom center / 28px 14px repeat-x,
+    radial-gradient(circle at 0%   50%,  transparent 12px, #000 13px) left   center / 14px 28px repeat-y,
+    radial-gradient(circle at 100% 50%,  transparent 12px, #000 13px) right  center / 14px 28px repeat-y,
+    linear-gradient(#000 0 0) 14px 14px / calc(100% - 28px) calc(100% - 28px) no-repeat;
+}
+
+/* The actual photo */
+.wzk__photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* inset from stamp edge so dark border frames the photo */
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* Placeholder (no image prop provided) */
+.wzk__photo--placeholder {
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, #1a3a4a, #0b212a);
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — Tablet
+   ═══════════════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .wzk {
+    padding: 60px 40px;
+  }
+  .wzk__inner {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 900px) {
+  .wzk {
+    padding: 50px 28px;
+  }
+  .wzk__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .wzk__stamp-wrap {
+    order: -1; /* image above text on tablet/mobile */
+  }
+  .wzk__stamp {
+    max-width: 480px;
+  }
+  .wzk__title {
+    text-align: center;
+  }
+  .wzk__body {
+    text-align: left;
+  }
+  .wzk__btn {
+    align-self: center;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — Mobile
+   ═══════════════════════════════════════════════════════ */
+@media (max-width: 560px) {
+  .wzk {
+    padding: 40px 20px;
+  }
+  .wzk__title {
+    font-size: 24px;
+  }
+  .wzk__body {
+    font-size: 14px;
+  }
+  .wzk__deco--tr,
+  .wzk__deco--br {
+    opacity: 0.5;
+  }
+}

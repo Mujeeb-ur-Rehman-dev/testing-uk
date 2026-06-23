@@ -7,15 +7,20 @@ import VideoSection from "./components/VideoSection";
 import Newsletter from "./components/Newsletter";
 import Footer from "./components/Footer";
 import "./App.css";
+import WhyGiveZakat from './components/WhyGiveZakat';
+import zakatImage from '../src/assets/imgi_26_Group-5766-300x267.png'
+import ZakatImpact from "./components/ZakatImpact";
 
 export default function App() {
   return (
     <div className="page">
       <Header />
       <Hero />
+      <WhyGiveZakat image={zakatImage}/>
       <CategoryCarousel />
       <ImpactStats />
       <VideoSection />
+      <ZakatImpact/>
       <Newsletter />
       <Footer />
     </div>
