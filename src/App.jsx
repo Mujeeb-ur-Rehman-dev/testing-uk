@@ -10,6 +10,7 @@ import "./App.css";
 import WhyGiveZakat from './components/WhyGiveZakat';
 import zakatImage from '../src/assets/imgi_26_Group-5766-300x267.png'
 import ZakatImpact from "./components/ZakatImpact";
+import ZakatCalculator from "./components/ZakatCalculator";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
       <VideoSection />
       <ZakatImpact/>
       <Newsletter />
+      <ZakatCalculator/>
       <Footer />
     </div>
   );

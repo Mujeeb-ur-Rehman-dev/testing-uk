@@ -1,0 +1,352 @@
+/* ═══════════════════════════════════════════════════════════
+   ZAKAT CALCULATOR — Component Styles
+   Colors:
+     outer bg      : #0b212a  (dark teal)
+     title/desc    : #fffaee  (cream-white)
+     left panel    : #fffaee  (cream)
+     right panel   : #22582d  (dark green)
+     input bg      : #fff
+     input border  : #ccc
+     section title : #0b212a
+     accent label  : #c0621e  (gold label)
+     summary text  : #fff
+     zakat due val : #fff bold large
+     pay btn       : #0b212a
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Section wrapper ── */
+.zc {
+  background: #0b212a;
+  padding: 56px 40px 64px;
+}
+
+/* ── Page heading block ── */
+.zc__header {
+  max-width: 700px;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.zc__page-title {
+  font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 900;
+  color: #fffaee;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 20px;
+}
+
+.zc__page-desc {
+  font-size: clamp(13px, 1.1vw, 15px);
+  color: #c8d8cc;
+  line-height: 1.65;
+  margin: 0;
+  text-align: center;
+}
+
+/* ── Two-panel card ── */
+.zc__card {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LEFT PANEL — form fields
+   ═══════════════════════════════════════════════════════════ */
+.zc__left {
+  background: #fffaee;
+  padding: 40px 36px 48px;
+}
+
+/* Section titles: "Assets" / "Liabilities" */
+.zc__section-title {
+  font-size: clamp(18px, 1.8vw, 24px);
+  font-weight: 700;
+  color: #0b212a;
+  margin: 0 0 20px;
+  font-family: "Arial Black", Arial, sans-serif;
+}
+
+.zc__section-title--liab {
+  margin-top: 32px;
+}
+
+/* Two-column field row */
+.zc__field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 24px;
+  margin-bottom: 18px;
+}
+
+.zc__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Labels */
+.zc__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0b212a;
+}
+
+/* Gold label gets warm accent colour */
+.zc__label--accent {
+  color: #c0621e;
+}
+
+/* Inputs — white pill-style */
+.zc__input {
+  background: #fff;
+  border: 1.5px solid #d0cfc8;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #0b212a;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.zc__input:focus {
+  border-color: #22582d;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RIGHT PANEL — summary
+   ═══════════════════════════════════════════════════════════ */
+.zc__right {
+  background: #22582d;
+  padding: 32px 28px 36px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Nisab info stamp card ── */
+.zc__nisab-card {
+  background: #fffaee;
+  margin-bottom: 24px;
+
+  /* All-4-sides scalloped stamp mask — green shows through */
+  -webkit-mask:
+    radial-gradient(circle at 50% 0%,    transparent 10px, #000 11px) top    center / 22px 11px repeat-x,
+    radial-gradient(circle at 50% 100%,  transparent 10px, #000 11px) bottom center / 22px 11px repeat-x,
+    radial-gradient(circle at 0%   50%,  transparent 10px, #000 11px) left   center / 11px 22px repeat-y,
+    radial-gradient(circle at 100% 50%,  transparent 10px, #000 11px) right  center / 11px 22px repeat-y,
+    linear-gradient(#000 0 0) 11px 11px / calc(100% - 22px) calc(100% - 22px) no-repeat;
+  mask:
+    radial-gradient(circle at 50% 0%,    transparent 10px, #000 11px) top    center / 22px 11px repeat-x,
+    radial-gradient(circle at 50% 100%,  transparent 10px, #000 11px) bottom center / 22px 11px repeat-x,
+    radial-gradient(circle at 0%   50%,  transparent 10px, #000 11px) left   center / 11px 22px repeat-y,
+    radial-gradient(circle at 100% 50%,  transparent 10px, #000 11px) right  center / 11px 22px repeat-y,
+    linear-gradient(#000 0 0) 11px 11px / calc(100% - 22px) calc(100% - 22px) no-repeat;
+}
+
+.zc__nisab-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 16px;
+  padding: 16px 20px 8px;
+}
+
+.zc__nisab-type {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0b212a;
+  margin: 0 0 4px;
+}
+
+.zc__nisab-detail {
+  font-size: 12px;
+  color: #2a4a30;
+  margin: 0 0 2px;
+}
+
+.zc__nisab-note {
+  font-size: 11px;
+  color: #4a7050;
+  margin: 0;
+  padding: 6px 20px 14px;
+  font-style: italic;
+}
+
+/* ── "Zakat Summary" heading ── */
+.zc__summary-title {
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 20px;
+  font-family: "Arial Black", Arial, sans-serif;
+}
+
+/* ── Summary rows ── */
+.zc__summary-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 6px;
+}
+
+.zc__summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #d8ead8;
+}
+
+.zc__summary-row span:last-child {
+  color: #fffaee;
+  font-weight: 600;
+}
+
+/* Nisab select dropdown */
+.zc__nisab-select {
+  background: #fffaee;
+  color: #0b212a;
+  border: 1.5px solid #d0cfc8;
+  border-radius: 6px;
+  padding: 5px 26px 5px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  appearance: auto;
+  outline: none;
+}
+
+/* ── Divider ── */
+.zc__divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+  margin: 16px 0;
+}
+
+/* ── Zakat Due row ── */
+.zc__zakat-due {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.zc__zakat-due span:first-child {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.zc__zakat-due-val {
+  font-size: 20px;
+  font-weight: 900;
+  color: #fff;
+}
+
+/* ── Pay Your Zakat button ── */
+.zc__pay-btn {
+  width: 100%;
+  background: #0b212a;
+  color: #fffaee;
+  border: none;
+  border-radius: 6px;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: auto;
+  letter-spacing: 0.3px;
+  transition: background 0.2s;
+}
+
+.zc__pay-btn:hover {
+  background: #061318;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE — Tablet (≤ 900px)
+   Stack panels vertically
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .zc {
+    padding: 44px 24px 52px;
+  }
+
+  .zc__card {
+    grid-template-columns: 1fr;
+  }
+
+  .zc__left {
+    padding: 32px 28px 36px;
+  }
+
+  .zc__right {
+    padding: 28px 24px 32px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE — Mobile (≤ 600px)
+   Single-column field rows
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 600px) {
+  .zc {
+    padding: 36px 16px 44px;
+  }
+
+  .zc__left {
+    padding: 28px 20px 32px;
+  }
+
+  .zc__right {
+    padding: 24px 20px 28px;
+  }
+
+  /* Stack field pairs into one column */
+  .zc__field-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .zc__page-title {
+    font-size: 22px;
+  }
+
+  .zc__page-desc {
+    font-size: 13px;
+  }
+
+  .zc__nisab-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 12px;
+    padding: 14px 16px 6px;
+  }
+
+  .zc__summary-row {
+    font-size: 13px;
+  }
+
+  .zc__zakat-due span:first-child {
+    font-size: 15px;
+  }
+
+  .zc__zakat-due-val {
+    font-size: 18px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE — Small phones (≤ 380px)
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 380px) {
+  .zc__nisab-grid {
+    grid-template-columns: 1fr;
+  }
+}
